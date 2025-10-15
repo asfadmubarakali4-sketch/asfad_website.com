@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Asfad — Frontend Developer & MS Office Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name="description" content="Asfad — Frontend Developer & MS Office Specialist. Modern, animated one-page portfolio ready for GitHub hosting." />
+  <style>
+    :root {
+      --bg: #071428;
+      --card: #0b1220;
+      --accent1: #06b6d4;
+      --accent2: #8b5cf6;
+      --muted: #9aa8bd;
+      --glass: rgba(255, 255, 255, 0.04);
+      --radius: 14px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Inter, Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color: #eaf6ff;
+      background: linear-gradient(180deg, #041027 0%, #071428 100%);
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 28px auto;
+      padding: 28px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+    .logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #041022;
+      font-family: Poppins;
+      font-size: 20px;
+    }
+    nav {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    nav a:hover {
+      color: #fff;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.04), transparent);
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 28px;
+      align-items: start;
+      margin-top: 22px;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      padding: 26px;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 40px rgba(2, 6, 23, 0.6);
+    }
+    h1 {
+      font-family: Poppins;
+      font-size: 36px;
+      margin: 0 0 8px;
+    }
+    .subtitle {
+      color: var(--muted);
+      margin: 0 0 18px;
+      line-height: 1.5;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      color: #041022;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--glass);
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .proj {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    .proj img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+    .proj:hover img {
+      transform: scale(1.07);
+    }
+    .proj-badge {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      padding: 6px 10px;
+      border-radius: 10px;
+      font-weight: 700;
+      color: #041022;
+      font-size: 13px;
+    }
+    .socials {
+      margin-top: 24px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .socials a {
+      font-size: 22px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .socials a:hover {
+      color: #fff;
+      transform: scale(1.2) rotate(8deg);
+      text-shadow: 0 0 12px var(--accent1);
+    }
+    footer {
+      margin-top: 26px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 600px) {
+      .wrap {
+        padding: 16px;
+      }
+      h1 {
+        font-size: 28px;
+      }
+      nav a {
+        font-size: 14px;
+        padding: 6px 8px;
+      }
+      .card {
+        padding: 18px;
+      }
+      .proj img {
+        height: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">AS</div>
+        <div>
+          <div style="font-weight:800">Asfad</div>
+          <div style="font-size:12px;color:var(--muted)">Frontend Developer · MS Office Expert</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <h1>Hi, I’m Asfad.</h1>
+        <p class="subtitle">
+          I build beautiful, responsive front-ends and create fast, accurate MS Office solutions.
+          I design animated themes, polished UI and interactions — ready to host on GitHub.
+        </p>
+        <a class="btn btn-primary" href="#contact">Contact Me</a>
+        <div class="skills">
+          <div class="chip">HTML</div>
+          <div class="chip">CSS</div>
+          <div class="chip">JavaScript</div>
+          <div class="chip">React</div>
+          <div class="chip">MS Excel</div>
+        </div>
+
+        <div class="socials">
+          <a href="https://github.com/asfadmubarakali4-sketch" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://wa.me/923232157513" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/lowk3y_.08" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@code.with.asfad" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="card" id="contact">
+        <h3>Contact</h3>
+        <p>📞 Phone: 03232157513</p>
+        <p>📧 Email: asfadrajput@example.com</p>
+      </div>
+    </section>
+
+    <section id="projects" class="card">
+      <h3>Projects</h3>
+      <div class="projects">
+        <div class="proj">
+          <img src="pic2.jpg" alt="project-1">
+          <div class="proj-badge">UI Design</div>
+        </div>
+        <div class="proj">
+          <img src="pic1.jpg" alt="project-2">
+          <div class="proj-badge">Landing Page</div>
+        </div>
+        <div class="proj">
+          <img src="OIP.jpg" alt="project-3">
+          <div class="proj-badge">Dashboard</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Asfad. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
